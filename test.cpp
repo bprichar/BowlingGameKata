@@ -4,10 +4,12 @@
 
 TEST_CASE("Test the Bolwing Game", "[game]") {
 
-    Game *g = new Game();
-    for (int i=0; i<20; i++) {
-        g->roll(0);
+    SECTION("Test Gutter Game") {
+        Game *g = new Game();
+        for (int i=0; i<20; i++) {
+            g->roll(0);
+        }
+        REQUIRE(g->score() == 0);
     }
-    REQUIRE(g->score() == 0);
 
 }
