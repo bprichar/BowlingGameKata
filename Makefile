@@ -8,3 +8,6 @@ game.o: game.cpp game.h
 
 test.o: test.cpp game.h Catch/single_include/catch.hpp
 	g++ -c $(CXXFLAGS) $(<) -o $(@)
+
+clean:
+	rm -f *.o test
