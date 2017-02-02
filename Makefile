@@ -1,5 +1,8 @@
 CXXFLAGS := -std=c++0x -Wall -Wextra -Werror
 
+runtest: test
+	./test
+
 test: test.o game.o
 	g++ $(CXXFLAGS) $(^) -o $(@)
 
