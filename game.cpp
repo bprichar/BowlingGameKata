@@ -1,10 +1,9 @@
 #include "game.h"
 
 void Game::roll(int pins) {
-    int temp=pins;
-    temp++;
+    myscore += pins;
 }
 
 int Game::score() {
-    return 0;
+    return myscore;
 }
