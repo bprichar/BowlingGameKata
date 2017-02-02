@@ -3,4 +3,6 @@
 
 TEST_CASE("Test the Bolwing Game", "[game]") {
 
+    Game g = new Game();
+
 }
