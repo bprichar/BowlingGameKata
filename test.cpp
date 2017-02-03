@@ -4,8 +4,9 @@
 
 TEST_CASE("Test the Bolwing Game", "[game]") {
 
+    Game *g = new Game();
+
     SECTION("Test Gutter Game") {
-        Game *g = new Game();
         for (int i=0; i<20; i++) {
             g->roll(0);
         }
@@ -13,7 +14,6 @@ TEST_CASE("Test the Bolwing Game", "[game]") {
     }
 
     SECTION("Test All Ones") {
-        Game *g = new Game();
         for (int i=0; i<20; i++) {
             g->roll(1);
         }
