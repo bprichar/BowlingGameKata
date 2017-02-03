@@ -14,7 +14,7 @@ int Game::score() {
     int frame_index = 0;
     for (int frame = 0; frame < 10; frame++) {
         if (rolls[frame_index] == 10) {// strike
-            my_score += 10 + rolls[frame_index+1] + rolls[frame_index+2];
+            my_score += 10 + strikeBonus(frame_index);
             frame_index++;
         } else if (isSpare(frame_index)) {
             my_score += 10 + spareBonus(frame_index);
@@ -33,6 +33,10 @@ int Game::sumOfBallsInFrame(int frame_index) {
 
 int Game::spareBonus(int frame_index) {
     return rolls[frame_index + 2];
+}
+
+int Game::strikeBonus(int frame_index) {
+    return rolls[frame_index+1] + rolls[frame_index+2];
 }
 
 bool Game::isSpare(int frame_index) {
