@@ -8,6 +8,7 @@ class Game {
     Game();
     void roll(int pins);
     int score();
+    bool isSpare(int frame_index);
 
   private:
     std::vector<int> rolls;
