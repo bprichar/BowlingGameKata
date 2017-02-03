@@ -13,9 +13,7 @@ TEST_CASE("Test the Bolwing Game", "[game]") {
     Game *g = new Game();
 
     SECTION("Test Gutter Game") {
-        int n = 20;
-        int pins = 0;
-        rollMany(g, n, pins);
+        rollMany(g, 20, 0);
         REQUIRE(g->score() == 0);
     }
 
