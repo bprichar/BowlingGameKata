@@ -13,8 +13,13 @@ int Game::score() {
     int my_score = 0;
     int i = 0;
     for (int frame = 0; frame < 10; frame++) {
-        my_score += rolls[i] + rolls[i+1];
-        i++;
+        if (rolls[i] + rolls[i+1] == 10) {
+            my_score += 10 + rolls[i+2];
+            i += 2;
+        } else {
+            my_score += rolls[i] + rolls[i+1];
+            i += 2;
+        }
     }
     return my_score;
 }
