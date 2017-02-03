@@ -8,6 +8,11 @@ void rollMany(Game *g, int n, int pins) {
     }
 }
 
+void rollSpare(Game *g) {
+    g->roll(5);
+    g->roll(5);
+}
+
 TEST_CASE("Test the Bolwing Game", "[game]") {
 
     Game *g = new Game();
@@ -23,8 +28,7 @@ TEST_CASE("Test the Bolwing Game", "[game]") {
     }
 
     SECTION("Test One Spare") {
-        g->roll(5);
-        g->roll(5); // spare
+        rollSpare(g);
         g->roll(3);
         rollMany(g, 17, 0);
         REQUIRE(g->score() == 16);
