@@ -13,7 +13,10 @@ int Game::score() {
     int my_score = 0;
     int frame_index = 0;
     for (int frame = 0; frame < 10; frame++) {
-        if (isSpare(frame_index)) {
+        if (rolls[frame_index] == 10) {// strike
+            my_score += 10 + rolls[frame_index+1] + rolls[frame_index+2];
+            frame_index++;
+        } else if (isSpare(frame_index)) {
             my_score += 10 + rolls[frame_index+2];
             frame_index += 2;
         } else {
