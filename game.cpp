@@ -11,11 +11,10 @@ void Game::roll(int pins) {
 
 int Game::score() {
     int my_score = 0;
-    for (std::size_t i = 0; i < rolls.size(); i++) {
-        if (rolls[i] + rolls[i+1] == 10) { // spare
-            my_score += rolls[i+2];
-        }
-        my_score += rolls[i];
+    int i = 0;
+    for (int frame = 0; frame < 10; frame++) {
+        my_score += rolls[i] + rolls[i+1];
+        i++;
     }
     return my_score;
 }
