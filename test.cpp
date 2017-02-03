@@ -7,8 +7,10 @@ TEST_CASE("Test the Bolwing Game", "[game]") {
     Game *g = new Game();
 
     SECTION("Test Gutter Game") {
-        for (int i=0; i<20; i++) {
-            g->roll(0);
+        int n = 20;
+        int pins = 0;
+        for (int i=0; i<n; i++) {
+            g->roll(pins);
         }
         REQUIRE(g->score() == 0);
     }
