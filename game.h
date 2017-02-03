@@ -14,5 +14,6 @@ class Game {
     int current_roll;
     bool isSpare(int frame_index);
     int sumOfBallsInFrame(int frame_index);
+    int spareBonus(int frame_index);
 };
 #endif
