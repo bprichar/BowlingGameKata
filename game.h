@@ -6,6 +6,8 @@ class Game {
     int score();
 
   private:
-    int myscore;
+    int my_score;
+    int rolls[21];
+    int current_roll;
 };
 #endif
