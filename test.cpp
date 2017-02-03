@@ -46,4 +46,9 @@ TEST_CASE("Test the Bolwing Game", "[game]") {
         REQUIRE(g->score() == 24);
     }
 
+    SECTION("Test Perfect Game") {
+        rollMany(g, 12, 10);
+        REQUIRE(g->score() == 300);
+    }
+
 }
