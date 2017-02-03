@@ -13,6 +13,7 @@ class Game {
     std::vector<int> rolls;
     int current_roll;
     bool isSpare(int frame_index);
+    bool isStrike(int frame_index);
     int sumOfBallsInFrame(int frame_index);
     int spareBonus(int frame_index);
     int strikeBonus(int frame_index);
