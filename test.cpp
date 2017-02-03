@@ -2,6 +2,12 @@
 #include "Catch/single_include/catch.hpp"
 #include "game.h"
 
+void rollMany(Game *g, int n, int pins) {
+    for (int i = 0; i < n; i++) {
+        g->roll(pins);
+    }
+}
+
 TEST_CASE("Test the Bolwing Game", "[game]") {
 
     Game *g = new Game();
@@ -9,9 +15,7 @@ TEST_CASE("Test the Bolwing Game", "[game]") {
     SECTION("Test Gutter Game") {
         int n = 20;
         int pins = 0;
-        for (int i=0; i<n; i++) {
-            g->roll(pins);
-        }
+        rollMany(g, n, pins);
         REQUIRE(g->score() == 0);
     }
 
