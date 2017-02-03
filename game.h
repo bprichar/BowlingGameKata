@@ -10,7 +10,6 @@ class Game {
     int score();
 
   private:
-    int my_score;
     std::vector<int> rolls;
     int current_roll;
 };
