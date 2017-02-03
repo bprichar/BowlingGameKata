@@ -22,4 +22,12 @@ TEST_CASE("Test the Bolwing Game", "[game]") {
         REQUIRE(g->score() == 20);
     }
 
+    SECTION("Test One Spare") {
+        g->roll(5);
+        g->roll(5); // spare
+        g->roll(3);
+        rollMany(g, 17, 0);
+        REQUIRE(g->score() == 16);
+    }
+
 }
