@@ -8,10 +8,11 @@ class Game {
     Game();
     void roll(int pins);
     int score();
-    bool isSpare(int frame_index);
 
   private:
     std::vector<int> rolls;
     int current_roll;
+    bool isSpare(int frame_index);
+    int sumOfBallsInFrame(int frame_index);
 };
 #endif

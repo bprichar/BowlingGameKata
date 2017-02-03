@@ -20,11 +20,15 @@ int Game::score() {
             my_score += 10 + rolls[frame_index+2];
             frame_index += 2;
         } else {
-            my_score += rolls[frame_index] + rolls[frame_index+1];
+            my_score += sumOfBallsInFrame(frame_index);
             frame_index += 2;
         }
     }
     return my_score;
+}
+
+int Game::sumOfBallsInFrame(int frame_index) {
+    return rolls[frame_index] + rolls[frame_index+1];
 }
 
 bool Game::isSpare(int frame_index) {
