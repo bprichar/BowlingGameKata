@@ -18,9 +18,7 @@ TEST_CASE("Test the Bolwing Game", "[game]") {
     }
 
     SECTION("Test All Ones") {
-        for (int i=0; i<20; i++) {
-            g->roll(1);
-        }
+        rollMany(g, 20, 1);
         REQUIRE(g->score() == 20);
     }
 
