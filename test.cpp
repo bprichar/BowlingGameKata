@@ -13,6 +13,10 @@ void rollSpare(Game *g) {
     g->roll(5);
 }
 
+void rollStrike(Game *g) {
+    g->roll(10);
+}
+
 TEST_CASE("Test the Bolwing Game", "[game]") {
 
     Game *g = new Game();
@@ -35,7 +39,7 @@ TEST_CASE("Test the Bolwing Game", "[game]") {
     }
 
     SECTION("Test One Strike") {
-        g->roll(10); // strike
+        rollStrike(g);
         g->roll(3);
         g->roll(4);
         rollMany(g, 16, 0);
